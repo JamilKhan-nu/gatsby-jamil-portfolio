@@ -22,3 +22,12 @@
   margin-right: 4.5rem;
   text-decoration: none;
 }
+
+.active-nav-item {
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.books {
+  margin-top: 3rem;
+}

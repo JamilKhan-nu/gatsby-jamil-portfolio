@@ -2,6 +2,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import * as indexStyles from "../components/index.module.css"
 import { Link } from "gatsby"
+import Book1 from "../assets/deep work.png"
 
 export default function Home() {
   return (
@@ -27,6 +28,23 @@ export default function Home() {
         <Link to="/" className={indexStyles.socialLink}>
           Mail
         </Link>
+      </div>
+      <div className={indexStyles.books}>
+        <h1 className={indexStyles.booksHeader}>Books I've Read Lately</h1>
+        <ul className={indexStyles.bookList}>
+          <li>
+            <img src={Book1} alt="Deep work book" />
+          </li>
+          <li>
+            <img src={Book1} alt="Deep work book" />
+          </li>
+          <li>
+            <img src={Book1} alt="Deep work book" />
+          </li>
+          <li>
+            <img src={Book1} alt="Deep work book" />
+          </li>
+        </ul>
       </div>
     </Layout>
   )
