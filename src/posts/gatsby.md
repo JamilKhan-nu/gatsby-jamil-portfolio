@@ -5,6 +5,8 @@ date: "30-jan-2023"
 
 This is a Gatsby js bootcamp
 
+![xmas](./xmas.jpeg)
+
 ## Topics covered
 
 1. How to install gatsby

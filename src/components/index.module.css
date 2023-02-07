@@ -48,22 +48,37 @@
   color: white;
 }
 
-.books {
-  margin-top: 10rem;
+.latest-articles {
+  margin-top: 12rem;
+  margin-bottom: 8rem;
 }
 
-.books-header {
-  font-size: 2rem;
-  padding-bottom: 2rem;
-}
-
-.book-list {
-  list-style-type: none;
+.article-lists {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 2rem;
 }
 
-.book-Img {
-  image-resolution: from-image 30dpi;
+.article-list {
+  border: rgb(211, 209, 209) solid 1px;
+  padding: 2rem 1rem;
+  border-radius: 20px;
+}
+
+.article-list:hover {
+  border: rgb(5, 5, 5) solid 1.5px;
+}
+
+.article-heading {
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+}
+
+.article-subheading {
+  padding-bottom: 0.5rem;
+}
+
+.article-date {
+  font-size: 0.8rem;
 }

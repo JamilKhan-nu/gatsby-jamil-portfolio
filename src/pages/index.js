@@ -2,7 +2,6 @@ import * as React from "react"
 import Layout from "../components/layout"
 import * as indexStyles from "../components/index.module.css"
 import { Link } from "gatsby"
-import Book1 from "../assets/deep work.png"
 
 export default function Home() {
   return (
@@ -29,22 +28,37 @@ export default function Home() {
           Mail
         </Link>
       </div>
-      <div className={indexStyles.books}>
-        <h1 className={indexStyles.booksHeader}>Books I've Read Lately</h1>
-        <ul className={indexStyles.bookList}>
-          <li>
-            <img src={Book1} alt="Deep work book" />
-          </li>
-          <li>
-            <img src={Book1} alt="Deep work book" />
-          </li>
-          <li>
-            <img src={Book1} alt="Deep work book" />
-          </li>
-          <li>
-            <img src={Book1} alt="Deep work book" />
-          </li>
-        </ul>
+      <div className={indexStyles.latestArticles}>
+        <h1>Latest Articles</h1>
+        <div className={indexStyles.articleLists}>
+          <div className={indexStyles.articleList}>
+            <h2 className={indexStyles.articleHeading}>Programming</h2>
+            <h4 className={indexStyles.articleSubheading}>
+              How to build a text editor with gatsby js
+            </h4>
+            <p className={indexStyles.articleDate}>Jan 14, 2013</p>
+          </div>
+          <div className={indexStyles.articleList}>
+            <h2 className={indexStyles.articleHeading}>Books notes</h2>
+            <h4 className={indexStyles.articleSubheading}>
+              How to build a text editor with gatsby js
+            </h4>
+            <p className={indexStyles.articleDate}>Jan 14, 2013</p>
+          </div>
+          <div className={indexStyles.articleList}>
+            <h2 className={indexStyles.articleHeading}>Photography</h2>
+            <h4 className={indexStyles.articleSubheading}>
+              How to build a text editor with gatsby js
+            </h4>
+            <p className={indexStyles.articleDate}>Jan 14, 2013</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h1>Books I've read lately</h1>
+        </div>
+        <div></div>
       </div>
     </Layout>
   )

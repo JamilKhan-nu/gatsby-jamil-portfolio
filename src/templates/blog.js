@@ -1,27 +1,36 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+
+const options = {
+  renderMark: {
+    [MARKS.BOLD]: (text) => <strong>{text}</strong>,
+  },
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+  },
+}
 
 export const query = graphql`
   query ($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        date
+    contentfulBlog(slug: { eq: $slug }) {
+      title
+      publishedData(formatString: "MMMM Do, YYYY")
+      postBody {
+        raw
       }
-      html
     }
   }
 `
 
-function Blog(props) {
+const Blog = (props) => {
   return (
     <Layout>
-      <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-      <p>{props.data.markdownRemark.frontmatter.date}</p>
-      <div
-        dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
-      ></div>
+      <h1>{props.data.contentfulBlog.title}</h1>
+      <p>{props.data.contentfulBlog.publishedData}</p>
+      <p>{renderRichText(props.data.contentfulBlog.postBody, options)}</p>
     </Layout>
   )
 }
