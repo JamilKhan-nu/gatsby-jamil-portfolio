@@ -11,10 +11,7 @@
   flex-direction: column;
   margin-top: 5rem;
 }
-.hi {
-  margin-bottom: 0.5rem;
-  font-size: 2rem;
-}
+
 .name {
   margin-bottom: 0.5rem;
   font-size: 3.5rem;
@@ -41,6 +38,7 @@
   padding: 7px 15px;
   border-radius: 12px;
   margin-right: 1rem;
+  color: black;
 }
 
 .social-link:hover {
@@ -64,6 +62,7 @@
   border: rgb(211, 209, 209) solid 1px;
   padding: 2rem 1rem;
   border-radius: 20px;
+  margin-right: 1rem;
 }
 
 .article-list:hover {
@@ -81,4 +80,16 @@
 
 .article-date {
   font-size: 0.8rem;
+}
+
+.img-section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.img {
+  height: 14rem;
+  width: 9rem;
+  margin-right: 1.5rem;
 }

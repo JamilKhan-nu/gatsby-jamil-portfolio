@@ -2,12 +2,18 @@ import * as React from "react"
 import Layout from "../components/layout"
 import * as indexStyles from "../components/index.module.css"
 import { Link } from "gatsby"
+import Book1 from "../assets/Book1.png"
+import Book2 from "../assets/Book2.png"
+import Book3 from "../assets/Book3.png"
+import Book4 from "../assets/Book4.png"
+import Book5 from "../assets/Book5.png"
+import Book6 from "../assets/Book6.png"
 
 export default function Home() {
   return (
     <Layout>
       <div className={indexStyles.hero}>
-        <h2 className={indexStyles.hi}>Hey,</h2>
+        <h3 className={indexStyles.hi}>Hey,</h3>
         <h1 className={indexStyles.name}>I'm Jamil Khan</h1>
         <h3 className={indexStyles.title}>Full-stack Software Developer</h3>
         <p className={indexStyles.job}>
@@ -58,7 +64,14 @@ export default function Home() {
         <div>
           <h1>Books I've read lately</h1>
         </div>
-        <div></div>
+        <div className={indexStyles.imgSection}>
+          <img className={indexStyles.img} src={Book1} alt="Book1" />
+          <img className={indexStyles.img} src={Book2} alt="Book2" />
+          <img className={indexStyles.img} src={Book3} alt="Book3" />
+          <img className={indexStyles.img} src={Book4} alt="Book4" />
+          <img className={indexStyles.img} src={Book5} alt="Book5" />
+          <img className={indexStyles.img} src={Book6} alt="Book6" />
+        </div>
       </div>
     </Layout>
   )

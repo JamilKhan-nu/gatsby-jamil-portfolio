@@ -9,6 +9,7 @@
 .logo {
   font-size: 30px;
   text-decoration: none;
+  color: black;
 }
 
 .nav-list {
@@ -21,9 +22,5 @@
   font-size: 1.3rem;
   margin-right: 4.5rem;
   text-decoration: none;
-}
-
-.active-nav-item {
-  border-bottom: 2px solid black;
-  margin-bottom: 10px;
+  color: black;
 }
