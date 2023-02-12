@@ -2,17 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-// import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-// import { renderRichText } from "gatsby-source-contentful/rich-text"
-
-// const options = {
-//   renderMark: {
-//     [MARKS.BOLD]: (text) => <strong>{text}</strong>,
-//   },
-//   renderNode: {
-//     [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-//   },
-// }
 
 export const query = graphql`
   query ($slug: String!) {

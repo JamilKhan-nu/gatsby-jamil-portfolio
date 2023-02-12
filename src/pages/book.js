@@ -5,11 +5,15 @@ import Layout from "../components/layout"
 function Book() {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBooks {
+      allContentfulBooks(sort: { bookTitle: ASC }) {
         edges {
           node {
             bookTitle
             author
+            notes {
+              raw
+            }
+            slug
           }
         }
       }
@@ -21,7 +25,7 @@ function Book() {
         {data.allContentfulBooks.edges.map((edge) => {
           return (
             <li>
-              <Link>
+              <Link to={`/book/${edge.node.slug}`}>
                 <h1>{edge.node.bookTitle}</h1>
                 <p>{edge.node.author}</p>
               </Link>
