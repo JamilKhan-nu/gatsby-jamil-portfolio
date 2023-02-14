@@ -1,6 +1,7 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
+import { graphql, Link, useStaticQuery } from "gatsby"
+import * as blogStyles from "./blog.module.css"
 
 function Book() {
   const data = useStaticQuery(graphql`
@@ -10,10 +11,8 @@ function Book() {
           node {
             bookTitle
             author
-            notes {
-              raw
-            }
             slug
+            createdAt(formatString: "MMMM Do, YYYY")
           }
         }
       }
@@ -21,12 +20,15 @@ function Book() {
   `)
   return (
     <Layout>
-      <ol>
+      <ol className={blogStyles.posts}>
         {data.allContentfulBooks.edges.map((edge) => {
           return (
-            <li>
-              <Link to={`/book/${edge.node.slug}`}>
-                <h1>{edge.node.bookTitle}</h1>
+            <li className={blogStyles.post}>
+              <Link
+                className={blogStyles.postList}
+                to={`/book/${edge.node.slug}`}
+              >
+                <h2>{edge.node.bookTitle}</h2>
                 <p>{edge.node.author}</p>
               </Link>
             </li>

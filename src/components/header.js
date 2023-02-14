@@ -20,45 +20,25 @@ function Header() {
       <nav>
         <ul className={headerStyle.navList}>
           <li>
-            <Link
-              to="/about"
-              className={headerStyle.navItem}
-              activeClassName={headerStyle.activeNavItem}
-            >
+            <Link to="/about" className={headerStyle.navItem}>
               About
             </Link>
           </li>
           <li>
-            <Link
-              to="/blog"
-              className={headerStyle.navItem}
-              activeClassName={headerStyle.activeNavItem}
-            >
+            <Link to="/blog" className={headerStyle.navItem}>
               Blog
             </Link>
           </li>
           <li>
-            <Link
-              to="/book"
-              className={headerStyle.navItem}
-              activeClassName={headerStyle.activeNavItem}
-            >
+            <Link to="/book" className={headerStyle.navItem}>
               Book
             </Link>
           </li>
           <li>
-            <Link
-              to="/projects"
-              className={headerStyle.navItem}
-              activeClassName={headerStyle.activeNavItem}
-            >
+            <Link to="/projects" className={headerStyle.navItem}>
               Projects
             </Link>
-            <Link
-              to="/"
-              className={headerStyle.navItem}
-              activeClassName={headerStyle.activeNavItem}
-            >
+            <Link to="/" className={headerStyle.navItem}>
               Resume
             </Link>
           </li>

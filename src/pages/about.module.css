@@ -1,0 +1,38 @@
+.about-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-section {
+  max-width: 650px;
+  margin-right: 3rem;
+}
+
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-education {
+  margin-top: 3rem;
+}
+
+.about-eduHead {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.uniName {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.courseName {
+  font-weight: bold;
+  margin: 0;
+}
+
+.session {
+  font-size: 0.85rem;
+}
