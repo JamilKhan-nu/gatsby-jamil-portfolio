@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
 import * as aboutStyles from "./about.module.css"
 import picture from "../assets/profile.jpg"
 
@@ -34,6 +35,7 @@ function About() {
       }
     }
   `)
+
   return (
     <Layout>
       <div className={aboutStyles.aboutHeader}>
@@ -43,7 +45,7 @@ function About() {
           )}
         </div>
         <div className={aboutStyles.aboutSidebar}>
-          <img src={picture} alt="Profile picture" />
+          <img src={picture} alt="Profile" />
           <div className={aboutStyles.aboutEducation}>
             <h1 className={aboutStyles.aboutEduHead}>Education</h1>
             <hr />

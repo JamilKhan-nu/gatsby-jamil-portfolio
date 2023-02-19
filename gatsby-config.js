@@ -16,16 +16,10 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_CDA_TOKEN,
       },
     },
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
-      },
-    },
-    `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {

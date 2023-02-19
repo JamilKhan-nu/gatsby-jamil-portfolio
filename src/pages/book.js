@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { GatsbyImage } from "gatsby-plugin-image"
 import * as bookStyles from "../components/book.module.css"
 
 function Book() {
@@ -18,7 +19,13 @@ function Book() {
             summary
           }
         }
+        nodes {
+          bookCover {
+            gatsbyImage(width: 229)
+          }
+        }
       }
+
       contentfulBookHeading {
         heading
         mainText {
@@ -40,10 +47,9 @@ function Book() {
           return (
             <li className={bookStyles.books}>
               <div className={bookStyles.bookThumbnail}>
-                <div>
-                  <img
-                    className={bookStyles.bookCover}
-                    src={edge.node.bookCover}
+                <div className={bookStyles.bookCover}>
+                  <GatsbyImage
+                    src={data.allContentfulBooks.nodes.bookCover}
                     alt="Book Cover"
                   />
                 </div>
