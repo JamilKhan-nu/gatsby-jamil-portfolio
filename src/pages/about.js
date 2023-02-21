@@ -5,6 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import * as aboutStyles from "./about.module.css"
 import picture from "../assets/profile.jpg"
+import Head from "../components/head"
 
 function About() {
   const data = useStaticQuery(graphql`
@@ -38,6 +39,7 @@ function About() {
 
   return (
     <Layout>
+      <Head title="About" />
       <div className={aboutStyles.aboutHeader}>
         <div className={aboutStyles.aboutSection}>
           {documentToReactComponents(

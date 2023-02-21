@@ -11,6 +11,8 @@ module.exports = {
     logo: "JKhan",
   },
   plugins: [
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-contentful`,
       options: {

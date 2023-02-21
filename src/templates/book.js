@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import * as booktemstyles from "../styles/bookTemplate.module.css"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { GatsbyImage } from "gatsby-plugin-image"
+import Head from "../components/head"
 
 export const query = graphql`
   query ($slug: String!) {
@@ -27,6 +28,7 @@ export const query = graphql`
 const Book = (props) => {
   return (
     <Layout>
+      <Head title={props.data.contentfulBooks.bookTitle} />
       <div className={booktemstyles.bookThumbnail}>
         <div className={booktemstyles.bookCover}>
           <GatsbyImage

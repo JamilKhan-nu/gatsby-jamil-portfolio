@@ -4,6 +4,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { GatsbyImage } from "gatsby-plugin-image"
 import * as bookStyles from "../components/book.module.css"
+import Head from "../components/head"
 
 function Book() {
   const data = useStaticQuery(graphql`
@@ -34,6 +35,7 @@ function Book() {
   `)
   return (
     <Layout>
+      <Head title="Book" />
       <h2>{data.contentfulBookHeading.heading}</h2>
       <p>
         {documentToReactComponents(

@@ -9,10 +9,12 @@ import Book3 from "../assets/Book3.png"
 import Book4 from "../assets/Book4.png"
 import Book5 from "../assets/Book5.png"
 import Book6 from "../assets/Book6.png"
+import Head from "../components/head"
 
 export default function Home() {
   return (
     <Layout>
+      <Head title="Home" />
       <div className={indexStyles.container}>
         <div>
           <div className={indexStyles.hero}>
