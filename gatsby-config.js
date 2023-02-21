@@ -1,3 +1,5 @@
+const path = require("path")
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -6,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: "My Portfolio",
     author: "Jamil Khan",
-    logo: "JK",
+    logo: "JKhan",
   },
   plugins: [
     {
@@ -20,13 +22,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: path.join(__dirname, `src`, `images`),
-      },
-    },
+
     {
       resolve: `gatsby-transformer-remark`,
       options: {
