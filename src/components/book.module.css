@@ -10,9 +10,8 @@
 }
 
 .book-cover {
-  height: 250px;
+  height: 260px;
   width: 180px;
-  border: black solid 1px;
   margin-right: 2rem;
 }
 

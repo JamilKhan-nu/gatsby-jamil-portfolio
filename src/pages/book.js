@@ -17,11 +17,9 @@ function Book() {
             type
             slug
             summary
-          }
-        }
-        nodes {
-          bookCover {
-            gatsbyImage(width: 229)
+            bookCover {
+              gatsbyImage(fit: COVER, height: 250, width: 180, layout: FIXED)
+            }
           }
         }
       }
@@ -49,7 +47,7 @@ function Book() {
               <div className={bookStyles.bookThumbnail}>
                 <div className={bookStyles.bookCover}>
                   <GatsbyImage
-                    src={data.allContentfulBooks.nodes.bookCover}
+                    image={edge.node.bookCover.gatsbyImage}
                     alt="Book Cover"
                   />
                 </div>
@@ -62,7 +60,9 @@ function Book() {
                   </h5>
                   <h6 className={bookStyles.type}>Type: {edge.node.type}</h6>
                   <p className={bookStyles.date}>Date Read: {edge.node.date}</p>
-                  <p className={bookStyles.summary}> {edge.node.summary}</p>
+                  <p className={bookStyles.summary}>
+                    Summary : {edge.node.summary}
+                  </p>
                   <Link to={`/book/${edge.node.slug}`}>
                     <p className={bookStyles.fullnotes}>Read full book notes</p>
                   </Link>

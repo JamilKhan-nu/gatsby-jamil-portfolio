@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import * as booktemstyles from "../styles/bookTemplate.module.css"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const query = graphql`
   query ($slug: String!) {
@@ -12,7 +13,7 @@ export const query = graphql`
       date(formatString: "MMMM Do, YYYY")
       type
       bookCover {
-        gatsbyImage(width: 180, height: 250)
+        gatsbyImage(fit: COVER, height: 250, width: 180, layout: FIXED)
       }
       slug
       summary
@@ -28,8 +29,8 @@ const Book = (props) => {
     <Layout>
       <div className={booktemstyles.bookThumbnail}>
         <div className={booktemstyles.bookCover}>
-          <img
-            src={props.data.contentfulBooks.bookCover.gatsbyImage}
+          <GatsbyImage
+            image={props.data.contentfulBooks.bookCover.gatsbyImage}
             alt="book cover"
           />
         </div>

@@ -1,3 +1,5 @@
+@import url("https://fonts.cdnfonts.com/css/zapfino");
+
 .header {
   padding: 1rem 0 3rem;
   display: flex;
@@ -10,6 +12,7 @@
   font-size: 30px;
   text-decoration: none;
   color: black;
+  font-family: "Zapfino", sans-serif;
 }
 
 .nav-list {
