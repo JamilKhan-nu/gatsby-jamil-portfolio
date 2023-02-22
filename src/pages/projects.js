@@ -11,7 +11,7 @@ function Projects(props) {
         edges {
           node {
             bookCover {
-              gatsbyImage
+              gatsbyImage(fit: COVER, height: 250, width: 180, layout: FIXED)
             }
           }
         }
