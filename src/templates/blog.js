@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Head from "../components/head"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const query = graphql`
   query ($slug: String!) {
@@ -11,6 +12,9 @@ export const query = graphql`
       publishedData(formatString: "MMMM Do, YYYY")
       postBody {
         raw
+      }
+      blogImage {
+        gatsbyImage(width: 470, height: 300)
       }
     }
   }
@@ -29,6 +33,10 @@ const Blog = (props) => {
   return (
     <Layout>
       <Head title={props.data.contentfulBlog.title} />
+      <GatsbyImage
+        image={props.data.contentfulBlog.blogImage.gatsbyImage}
+        alt="blog image"
+      />
       <h1>{props.data.contentfulBlog.title}</h1>
       <p>{props.data.contentfulBlog.publishedData}</p>
       {documentToReactComponents(
