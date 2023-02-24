@@ -1,17 +1,23 @@
 import React from "react"
 import Layout from "../components/layout"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import Head from "../components/head"
+import * as projectStyles from "../styles/projects.module.scss"
 
 function Projects(props) {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBooks {
+      allContentfulProjects {
         edges {
           node {
-            bookCover {
-              gatsbyImage(fit: COVER, height: 250, width: 180, layout: FIXED)
+            projectTitle
+            techStack
+            projectDescription
+            projectsLink
+            githublink
+            projectImage {
+              gatsbyImage(fit: COVER, width: 470, height: 300)
             }
           }
         }
@@ -22,15 +28,57 @@ function Projects(props) {
   return (
     <Layout>
       <Head title="Projects" />
-      <h2>My beautiful projects section</h2>
-      <p>Contentful images will be render here</p>
-      {data.allContentfulBooks.edges.map((node) => {
-        return (
-          <div>
-            <img />
-          </div>
-        )
-      })}
+      <div className={projectStyles.works}>
+        <h1>MY WORKS</h1>
+        <h3>These are my recent fun projects.</h3>
+        <p>
+          I always put my learning things into practice. These projects
+          demonstrates my learning outcome.
+        </p>
+      </div>
+      <hr />
+      <hr />
+      <br />
+      <ul className={projectStyles.projects}>
+        {data.allContentfulProjects.edges.map((edge) => {
+          return (
+            <li className={projectStyles.project}>
+              <div>
+                <GatsbyImage
+                  className={projectStyles.image}
+                  image={edge.node.projectImage.gatsbyImage}
+                  alt="project img"
+                />
+              </div>
+              <div className={projectStyles.details}>
+                <h4>{edge.node.projectTitle}</h4>
+                <p>{edge.node.projectDescription}</p>
+                <h5 className={projectStyles.techStack}>
+                  Tech Stack : {edge.node.techStack}
+                </h5>
+                <div className={projectStyles.links}>
+                  <Link
+                    external
+                    to={edge.node.githublink}
+                    target="_blank"
+                    className={projectStyles.link}
+                  >
+                    GitHub
+                  </Link>
+                  <Link
+                    external
+                    to={edge.node.projectsLink}
+                    target="_blank"
+                    className={projectStyles.link}
+                  >
+                    Demo
+                  </Link>
+                </div>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
     </Layout>
   )
 }
