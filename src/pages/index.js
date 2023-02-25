@@ -1,17 +1,41 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import * as indexStyles from "../components/index.module.css"
-import { Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import carton from "../assets/profileCarton.png"
-import Book1 from "../assets/Book1.png"
-import Book2 from "../assets/Book2.png"
-import Book3 from "../assets/Book3.png"
-import Book4 from "../assets/Book4.png"
-import Book5 from "../assets/Book5.png"
-import Book6 from "../assets/Book6.png"
 import Head from "../components/head"
 
 export default function Home() {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulProjects(limit: 3, sort: { createdAt: DESC }) {
+        edges {
+          node {
+            projectTitle
+            techStack
+            projectDescription
+            projectsLink
+            githublink
+            projectImage {
+              gatsbyImage(fit: COVER, width: 470, height: 300)
+            }
+          }
+        }
+      }
+      allContentfulBooks(limit: 5, sort: { bookTitle: ASC }) {
+        edges {
+          node {
+            slug
+            bookCover {
+              gatsbyImage(fit: COVER, height: 250, layout: FIXED)
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       <Head title="Home" />
@@ -20,7 +44,9 @@ export default function Home() {
           <div className={indexStyles.hero}>
             <h3>Hey,</h3>
             <h1 className={indexStyles.name}>I'm Jamil Khan</h1>
-            <h3 className={indexStyles.title}>Full-stack Software Developer</h3>
+            <h3 className={indexStyles.titles}>
+              Full-stack Software Developer
+            </h3>
             <p className={indexStyles.job}>
               I build digital products with React, TypeScript, Gatsby and
               GraphQl
@@ -57,43 +83,58 @@ export default function Home() {
           <img className={indexStyles.imgSection} src={carton} alt="profile" />
         </div>
       </div>
-      <div className={indexStyles.latestArticles}>
-        <h1>Latest Articles</h1>
-        <div className={indexStyles.articleLists}>
-          <div className={indexStyles.articleList}>
-            <h2 className={indexStyles.articleHeading}>Programming</h2>
-            <h4 className={indexStyles.articleSubheading}>
-              How to build a text editor with gatsby js
-            </h4>
-            <p className={indexStyles.articleDate}>Jan 14, 2013</p>
-          </div>
-          <div className={indexStyles.articleList}>
-            <h2 className={indexStyles.articleHeading}>Books notes</h2>
-            <h4 className={indexStyles.articleSubheading}>
-              How to build a text editor with gatsby js
-            </h4>
-            <p className={indexStyles.articleDate}>Jan 14, 2013</p>
-          </div>
-          <div className={indexStyles.articleList}>
-            <h2 className={indexStyles.articleHeading}>Photography</h2>
-            <h4 className={indexStyles.articleSubheading}>
-              How to build a text editor with gatsby js
-            </h4>
-            <p className={indexStyles.articleDate}>Jan 14, 2013</p>
-          </div>
-        </div>
+      <div className={indexStyles.latestProjects}>
+        <h1>Latest Projects</h1>
+        <ul className={indexStyles.projectsList}>
+          {data.allContentfulProjects.edges.map((edge) => {
+            return (
+              <li className={indexStyles.projects}>
+                <GatsbyImage
+                  image={edge.node.projectImage.gatsbyImage}
+                  alt="project img"
+                />
+                <h4 className={indexStyles.title}>{edge.node.projectTitle}</h4>
+                <h6 className={indexStyles.techStack}>{edge.node.techStack}</h6>
+                <div>
+                  <Link
+                    className={indexStyles.link}
+                    external
+                    to={edge.node.githublink}
+                    target="_blank"
+                  >
+                    GitHub
+                  </Link>
+                  <Link
+                    className={indexStyles.link}
+                    external
+                    to={edge.node.projectsLink}
+                    target="_blank"
+                  >
+                    Demo
+                  </Link>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
       </div>
       <div>
         <div>
           <h1>Books I've read lately</h1>
         </div>
         <div className={indexStyles.imgSection}>
-          <img className={indexStyles.img} src={Book1} alt="Book1" />
-          <img className={indexStyles.img} src={Book2} alt="Book2" />
-          <img className={indexStyles.img} src={Book3} alt="Book3" />
-          <img className={indexStyles.img} src={Book4} alt="Book4" />
-          <img className={indexStyles.img} src={Book5} alt="Book5" />
-          <img className={indexStyles.img} src={Book6} alt="Book6" />
+          {data.allContentfulBooks.edges.map((edge) => {
+            return (
+              <div className={indexStyles.pic}>
+                <Link to={`/book/${edge.node.slug}`}>
+                  <GatsbyImage
+                    image={edge.node.bookCover.gatsbyImage}
+                    alt="Book Cover"
+                  />
+                </Link>
+              </div>
+            )
+          })}
         </div>
       </div>
     </Layout>

@@ -26,9 +26,10 @@
   font-size: 3.5rem;
 }
 
-.title {
+.titles {
   margin-bottom: 1rem;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  font-weight: bolder;
 }
 
 .job {
@@ -55,9 +56,9 @@
   color: white;
 }
 
-.latest-articles {
+.latest-projects {
   margin-top: 8rem;
-  margin-bottom: 8rem;
+  margin-bottom: 10rem;
 }
 
 .article-lists {
@@ -96,9 +97,39 @@
   display: flex;
   flex-direction: row;
 }
+.pic {
+  height: 600px;
+  width: 500px;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.projectsList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
 
-.img {
-  height: 14rem;
-  width: 9rem;
-  margin-right: 1.5rem;
+.projects {
+  height: 20rem;
+  width: 22rem;
+  margin: 1rem;
+}
+
+.title {
+  margin-top: 0.9rem;
+  font-size: 1rem;
+}
+
+.techStack {
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.link {
+  border: black solid 1px;
+  margin-right: 1rem;
+  padding: 6px 8px;
+  border-radius: 15px;
+  color: black;
 }

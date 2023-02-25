@@ -29,9 +29,11 @@ function Projects(props) {
     <Layout>
       <Head title="Projects" />
       <div className={projectStyles.works}>
-        <h1>MY WORKS</h1>
-        <h3>These are my recent fun projects.</h3>
-        <p>
+        <h1 className={projectStyles.myWorks}>MY WORKS</h1>
+        <h3 className={projectStyles.funProject}>
+          These are my recent fun projects.
+        </h3>
+        <p className={projectStyles.pera}>
           I always put my learning things into practice. These projects
           demonstrates my learning outcome.
         </p>
