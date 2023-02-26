@@ -31,3 +31,18 @@
 .nav-item:hover {
   border-bottom: 2px solid black;
 }
+
+span {
+  border: solid black 2px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 1.35rem;
+  margin-right: 4.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+span:hover {
+  background: #000;
+  color: aliceblue;
+}

@@ -38,8 +38,8 @@ function Header() {
             <Link to="/projects" className={headerStyle.navItem}>
               Projects
             </Link>
-            <Link to="/" className={headerStyle.navItem}>
-              Resume
+            <Link to="/">
+              <span>Resume </span>
             </Link>
           </li>
         </ul>
