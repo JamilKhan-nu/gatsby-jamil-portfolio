@@ -5,6 +5,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import carton from "../assets/profileCarton.png"
 import Head from "../components/head"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 export default function Home() {
   const data = useStaticQuery(graphql`
@@ -29,6 +30,21 @@ export default function Home() {
             slug
             bookCover {
               gatsbyImage(fit: COVER, height: 250, layout: FIXED)
+            }
+          }
+        }
+      }
+      allContentfulFeatureBlog {
+        edges {
+          node {
+            featureBlogTitle
+            publishedDate(formatString: "MMMM Do, YYYY")
+            slug
+            featureBlogBody {
+              raw
+            }
+            featureBlogImage {
+              gatsbyImage(width: 800, height: 700)
             }
           }
         }
@@ -83,8 +99,43 @@ export default function Home() {
           <img className={indexStyles.imgSection} src={carton} alt="profile" />
         </div>
       </div>
+      {/* Feature blog section  =========================== */}
+
+      {data.allContentfulFeatureBlog.edges.map((edge) => {
+        return (
+          <div>
+            <h1>Latest Blog</h1>
+            <div className={indexStyles.featureBlog}>
+              <GatsbyImage
+                className={indexStyles.blogImage}
+                image={edge.node.featureBlogImage.gatsbyImage}
+                alt="blog image"
+              />
+              <div className={indexStyles.blogtext}>
+                <p>{edge.node.publishedDate}</p>
+                <Link to={`/blog/${edge.node.slug}`}>
+                  <h2>{edge.node.featureBlogTitle}</h2>
+                </Link>
+                {documentToReactComponents(
+                  JSON.parse(edge.node.featureBlogBody.raw)
+                )}
+
+                <Link
+                  className={indexStyles.button}
+                  to={`/blog/${edge.node.slug}`}
+                >
+                  Read More
+                </Link>
+              </div>
+            </div>
+          </div>
+        )
+      })}
+
+      {/* Project section  =========================== */}
+
       <div className={indexStyles.latestProjects}>
-        <h1>Latest Projects</h1>
+        <h1>Some things I've built</h1>
         <ul className={indexStyles.projectsList}>
           {data.allContentfulProjects.edges.map((edge) => {
             return (
@@ -94,8 +145,8 @@ export default function Home() {
                   alt="project img"
                 />
                 <h4 className={indexStyles.title}>{edge.node.projectTitle}</h4>
-                <h6 className={indexStyles.techStack}>{edge.node.techStack}</h6>
-                <div>
+
+                <div className={indexStyles.links}>
                   <Link
                     className={indexStyles.link}
                     external
@@ -118,11 +169,13 @@ export default function Home() {
           })}
         </ul>
       </div>
-      <div>
+
+      {/* Books section  =========================== */}
+      <div className={indexStyles.books}>
         <div>
-          <h1>Books I've read lately</h1>
+          <h1 className={indexStyles.bookHead}>Books I've read lately</h1>
         </div>
-        <div className={indexStyles.imgSection}>
+        <div className={indexStyles.bookCover}>
           {data.allContentfulBooks.edges.map((edge) => {
             return (
               <div className={indexStyles.pic}>

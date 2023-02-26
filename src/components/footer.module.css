@@ -1,4 +1,8 @@
 .footer {
-  margin-top: 7rem;
-  margin-bottom: 3rem;
+  margin-top: 15rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }

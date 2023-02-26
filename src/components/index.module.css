@@ -1,15 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,800&display=swap");
+@import url("https://fonts.cdnfonts.com/css/apercu");
 
 * {
   margin: 0;
   padding: 0;
   color: black;
-  font-family: "Montserrat", sans-serif;
+  font-family: "apercu", sans-serif;
 }
 
 .container {
   display: flex;
   flex-direction: row;
+  margin-bottom: 13rem;
 }
 
 .img-section {
@@ -56,54 +57,44 @@
   color: white;
 }
 
-.latest-projects {
-  margin-top: 8rem;
-  margin-bottom: 10rem;
-}
-
-.article-lists {
+.featureBlog {
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 2rem;
 }
 
-.article-list {
-  border: rgb(211, 209, 209) solid 1px;
-  padding: 2rem 1rem;
-  border-radius: 20px;
-  margin-right: 1rem;
+.blogImage {
+  height: 25rem;
+  width: 35rem;
+  margin-right: 4rem;
+  -webkit-box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
+  -moz-box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
+  box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
 }
 
-.article-list:hover {
-  border: rgb(5, 5, 5) solid 1.5px;
+.blogtext {
+  width: 28rem;
 }
 
-.article-heading {
-  text-transform: uppercase;
-  padding-bottom: 0.5rem;
+.button {
+  color: black;
+  border: rgb(187, 184, 184) solid 1px;
+  border-radius: 6px;
+  padding: 4px 6px;
 }
 
-.article-subheading {
-  padding-bottom: 0.5rem;
+.button:hover {
+  border: black solid 1.75px;
+  border-radius: 6px;
+  padding: 4px 6px;
 }
 
-.article-date {
-  font-size: 0.8rem;
+.latest-projects {
+  margin-top: 10rem;
+  margin-bottom: 8rem;
 }
 
-.img-section {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: row;
-}
-.pic {
-  height: 600px;
-  width: 500px;
-  margin-right: 1rem;
-  display: flex;
-  flex-direction: column;
-}
 .projectsList {
   list-style-type: none;
   display: flex;
@@ -111,25 +102,69 @@
 }
 
 .projects {
-  height: 20rem;
+  height: 19rem;
   width: 22rem;
   margin: 1rem;
+  border: rgb(218, 210, 210) solid 1px;
+  -webkit-box-shadow: 10px 10px 17px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 17px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 17px -3px rgba(0, 0, 0, 0.75);
+}
+
+.projects:hover {
+  -webkit-box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
+  -moz-box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
+  box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
 }
 
 .title {
   margin-top: 0.9rem;
+  margin-left: 0.3rem;
   font-size: 1rem;
 }
 
-.techStack {
-  font-size: 1rem;
-  margin-bottom: 0.9rem;
+.links {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 0.3rem;
 }
 
 .link {
   border: black solid 1px;
   margin-right: 1rem;
-  padding: 6px 8px;
-  border-radius: 15px;
+  padding: 4px 6px;
+  font-size: 0.8rem;
+  border-radius: 10px;
   color: black;
+}
+
+.link:hover {
+  color: whitesmoke;
+  background: black;
+}
+
+.books {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+.bookHead {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bookCover {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.pic {
+  margin-right: 2rem;
+}
+
+.pic:hover {
+  -webkit-box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
+  -moz-box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
+  box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
 }

@@ -14,10 +14,13 @@ function Footer() {
   `)
   return (
     <div className={footerStyles.footer}>
-      <h5>Copyright {data.site.siteMetadata.author} © 2023</h5>
-      <p>
+      <h5>
         Thanks for visiting my little digital corner. Your visit is my
         motivation.
+      </h5>
+      <p>
+        Designed & Developed by {data.site.siteMetadata.author}, Copyright ©
+        2023
       </p>
     </div>
   )
