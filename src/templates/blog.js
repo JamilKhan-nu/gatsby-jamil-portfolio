@@ -36,11 +36,12 @@ const Blog = (props) => {
     <Layout>
       <Head title={props.data.contentfulBlog.title} />
       <div>
-        {" "}
         <h1 className={blogStyles.blogTitle}>
           {props.data.contentfulBlog.title}
         </h1>
         <p>{props.data.contentfulBlog.publishedData}</p>
+        <hr />
+        <br />
         <GatsbyImage
           className={blogStyles.blogImage}
           image={props.data.contentfulBlog.blogImage.gatsbyImage}
