@@ -8,7 +8,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 function Blog() {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlog(sort: { publishedData: DESC }) {
+      allContentfulBlog(sort: { updatedAt: DESC }) {
         edges {
           node {
             title

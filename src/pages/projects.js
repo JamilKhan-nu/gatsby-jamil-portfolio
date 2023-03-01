@@ -8,7 +8,7 @@ import * as projectStyles from "../styles/projects.module.scss"
 function Projects(props) {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulProjects {
+      allContentfulProjects(sort: { updatedAt: DESC }) {
         edges {
           node {
             projectTitle

@@ -9,7 +9,7 @@ import Head from "../components/head"
 function Book() {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBooks(sort: { bookTitle: ASC }) {
+      allContentfulBooks(sort: { updatedAt: DESC }) {
         edges {
           node {
             bookTitle

@@ -24,7 +24,7 @@ export default function Home() {
           }
         }
       }
-      allContentfulBooks(limit: 5, sort: { bookTitle: ASC }) {
+      allContentfulBooks(limit: 5, sort: { updatedAt: DESC }) {
         edges {
           node {
             slug
@@ -34,7 +34,7 @@ export default function Home() {
           }
         }
       }
-      allContentfulFeatureBlog {
+      allContentfulFeatureBlog(sort: { updatedAt: DESC }) {
         edges {
           node {
             featureBlogTitle
