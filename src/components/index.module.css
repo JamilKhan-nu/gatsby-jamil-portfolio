@@ -157,6 +157,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .pic {
@@ -167,4 +168,58 @@
   -webkit-box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
   -moz-box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
   box-shadow: 10px 10px 17px -3px rgba(153, 151, 153, 1);
+}
+
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) {
+  .name {
+    font-size: 2.5rem;
+  }
+  .titles {
+    font-size: 1.5rem;
+  }
+  .job {
+    font-size: 1rem;
+  }
+  .img-section {
+    display: none;
+  }
+  .social-link {
+    font-size: 1rem;
+    padding: 3px 5px;
+    border: 0.7px solid grey;
+  }
+  .featureBlog {
+    display: flex;
+    flex-direction: column;
+  }
+  .blogImage {
+    height: 15rem;
+    width: 20rem;
+    margin: auto;
+  }
+  .blogtext {
+    width: 20rem;
+    margin-top: 0.8rem;
+  }
+  .projectsList {
+    display: flex;
+    flex-direction: column;
+  }
+  .projects {
+    height: 14rem;
+    width: 18rem;
+    margin: 15px auto;
+  }
+  .links {
+    display: none;
+  }
+  .bookCover {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .pic {
+    margin: 10px auto;
+  }
 }
