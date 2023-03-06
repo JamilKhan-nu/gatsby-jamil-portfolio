@@ -1,7 +1,7 @@
 import React from "react"
 import Footer from "./footer"
 import Header from "./header"
-import * as layoutStyles from "./layout.module.css"
+import * as layoutStyles from "../styles/layout.module.css"
 
 function Layout({ children }) {
   return (

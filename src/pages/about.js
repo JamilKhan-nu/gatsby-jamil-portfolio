@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-import * as aboutStyles from "./about.module.css"
+import * as aboutStyles from "../styles/about.module.css"
 import picture from "../assets/profile.jpg"
 import Head from "../components/head"
 

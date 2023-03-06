@@ -1,6 +1,6 @@
 import * as React from "react"
 import Layout from "../components/layout"
-import * as indexStyles from "../components/index.module.css"
+import * as indexStyles from "../styles/index.module.css"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import carton from "../assets/profileCarton.png"
@@ -24,7 +24,7 @@ export default function Home() {
           }
         }
       }
-      allContentfulBooks(limit: 5, sort: { updatedAt: DESC }) {
+      allContentfulBooks(limit: 10, sort: { updatedAt: DESC }) {
         edges {
           node {
             slug

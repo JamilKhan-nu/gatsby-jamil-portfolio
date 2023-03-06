@@ -11,3 +11,9 @@
   margin-bottom: 0.7rem;
 }
 
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) {
+  .blogImage {
+    height: 200px;
+    width: 300px;
+  }
+}

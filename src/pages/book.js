@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { GatsbyImage } from "gatsby-plugin-image"
-import * as bookStyles from "../components/book.module.css"
+import * as bookStyles from "../styles/book.module.css"
 import Head from "../components/head"
 
 function Book() {

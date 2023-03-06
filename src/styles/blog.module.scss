@@ -46,3 +46,38 @@
 .post-list:hover {
   background: #e4e4e4;
 }
+
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) {
+  .blog {
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bolder;
+      letter-spacing: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  .posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    height: 18rem;
+    width: 18rem;
+  }
+}

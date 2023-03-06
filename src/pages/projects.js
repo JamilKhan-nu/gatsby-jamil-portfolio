@@ -17,7 +17,7 @@ function Projects(props) {
             projectsLink
             githublink
             projectImage {
-              gatsbyImage(fit: COVER, width: 470, height: 300)
+              gatsbyImage(width: 470, height: 300)
             }
           }
         }

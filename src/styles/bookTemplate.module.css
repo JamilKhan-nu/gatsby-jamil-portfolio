@@ -12,7 +12,6 @@
 .book-cover {
   height: 250px;
   width: 180px;
-  border: black solid 1px;
   margin-right: 2rem;
 }
 
@@ -45,4 +44,15 @@
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #458be0;
+}
+
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) {
+  .book-thumbnail {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .book-cover {
+    margin-bottom: 1rem;
+  }
 }

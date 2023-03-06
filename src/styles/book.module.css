@@ -45,3 +45,15 @@
   margin-bottom: 0.5rem;
   color: #458be0;
 }
+
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) {
+  .book-thumbnail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .book-cover {
+    display: flex;
+    justify-content: center;
+  }
+}

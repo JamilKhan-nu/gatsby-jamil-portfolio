@@ -67,3 +67,32 @@
     color: black;
   }
 }
+
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) {
+  .myWorks {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    letter-spacing: 0.5rem;
+  }
+  .funProject {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: none;
+  }
+  .image {
+    width: 250px;
+    height: 200px;
+    margin-right: 0;
+  }
+  .details {
+    display: none;
+  }
+}
