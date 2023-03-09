@@ -5,6 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Head from "../components/head"
 import { GatsbyImage } from "gatsby-plugin-image"
 import * as blogStyles from "../styles/blogtemplate.module.scss"
+import PageWithComments from "./PageWithComments"
 
 export const query = graphql`
   query ($slug: String!) {
@@ -51,6 +52,7 @@ const Blog = (props) => {
           JSON.parse(props.data.contentfulBlog.postBody.raw, options)
         )}
       </div>
+      <PageWithComments />
     </Layout>
   )
 }

@@ -5,6 +5,7 @@ import * as booktemstyles from "../styles/bookTemplate.module.css"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Head from "../components/head"
+import PageWithComments from "./PageWithComments"
 
 export const query = graphql`
   query ($slug: String!) {
@@ -62,6 +63,7 @@ const Book = (props) => {
           JSON.parse(props.data.contentfulBooks.notes.raw)
         )}
       </div>
+      <PageWithComments />
     </Layout>
   )
 }
